@@ -10,13 +10,14 @@
  * Do not edit the class manually.
  */
 
+import { SetProductListAssociationsRequestAssociation } from '../models/SetProductListAssociationsRequestAssociation';
 import { HttpFile } from '../http/http';
 
-export class ProductlistSearchProductListsByIdsRequest {
+export class ProductlistSetProductListAssociationsRequest {
     'tenantId'?: string;
-    'ids'?: Array<string>;
-    'pageSize'?: number;
-    'pageNumber'?: number;
+    'listId'?: string;
+    'productGrn'?: string;
+    'associations'?: Array<SetProductListAssociationsRequestAssociation>;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -28,26 +29,26 @@ export class ProductlistSearchProductListsByIdsRequest {
             "format": ""
         },
         {
-            "name": "ids",
-            "baseName": "ids",
-            "type": "Array<string>",
+            "name": "listId",
+            "baseName": "listId",
+            "type": "string",
             "format": ""
         },
         {
-            "name": "pageSize",
-            "baseName": "pageSize",
-            "type": "number",
-            "format": "int64"
+            "name": "productGrn",
+            "baseName": "productGrn",
+            "type": "string",
+            "format": ""
         },
         {
-            "name": "pageNumber",
-            "baseName": "pageNumber",
-            "type": "number",
-            "format": "int64"
+            "name": "associations",
+            "baseName": "associations",
+            "type": "Array<SetProductListAssociationsRequestAssociation>",
+            "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return ProductlistSearchProductListsByIdsRequest.attributeTypeMap;
+        return ProductlistSetProductListAssociationsRequest.attributeTypeMap;
     }
 
     public constructor() {

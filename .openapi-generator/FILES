@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 ProductListApi.md
 README.md
 apis/ProductListApi.ts
@@ -48,11 +47,14 @@ models/ProductlistSearchProductListsByIdsRequest.ts
 models/ProductlistSearchProductListsByIdsResponse.ts
 models/ProductlistSearchProductListsRequest.ts
 models/ProductlistSearchProductListsResponse.ts
+models/ProductlistSetProductListAssociationsRequest.ts
+models/ProductlistSetProductListAssociationsResponse.ts
 models/ProductlistUpdateProductListRequest.ts
 models/ProductlistUpdateProductListResponse.ts
 models/ProtobufAny.ts
 models/RpcStatus.ts
 models/SearchProductListsRequestQuery.ts
+models/SetProductListAssociationsRequestAssociation.ts
 models/all.ts
 package.json
 rxjsStub.ts

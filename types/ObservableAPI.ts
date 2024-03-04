@@ -37,11 +37,14 @@ import { ProductlistSearchProductListsByIdsRequest } from '../models/Productlist
 import { ProductlistSearchProductListsByIdsResponse } from '../models/ProductlistSearchProductListsByIdsResponse';
 import { ProductlistSearchProductListsRequest } from '../models/ProductlistSearchProductListsRequest';
 import { ProductlistSearchProductListsResponse } from '../models/ProductlistSearchProductListsResponse';
+import { ProductlistSetProductListAssociationsRequest } from '../models/ProductlistSetProductListAssociationsRequest';
+import { ProductlistSetProductListAssociationsResponse } from '../models/ProductlistSetProductListAssociationsResponse';
 import { ProductlistUpdateProductListRequest } from '../models/ProductlistUpdateProductListRequest';
 import { ProductlistUpdateProductListResponse } from '../models/ProductlistUpdateProductListResponse';
 import { ProtobufAny } from '../models/ProtobufAny';
 import { RpcStatus } from '../models/RpcStatus';
 import { SearchProductListsRequestQuery } from '../models/SearchProductListsRequestQuery';
+import { SetProductListAssociationsRequestAssociation } from '../models/SetProductListAssociationsRequestAssociation';
 
 import { ProductListApiRequestFactory, ProductListApiResponseProcessor} from "../apis/ProductListApi";
 export class ObservableProductListApi {
@@ -57,39 +60,6 @@ export class ObservableProductListApi {
         this.configuration = configuration;
         this.requestFactory = requestFactory || new ProductListApiRequestFactory(configuration);
         this.responseProcessor = responseProcessor || new ProductListApiResponseProcessor();
-    }
-
-    /**
-     * The BulkUpdateProductListAssociations endpoint updates the positions of specified associations.
-     * Bulk update collection associations position
-     * @param body 
-     */
-    public bulkUpdateProductListAssociationsWithHttpInfo(body: ProductlistBulkUpdateProductListAssociationsRequest, _options?: Configuration): Observable<HttpInfo<RpcStatus>> {
-        const requestContextPromise = this.requestFactory.bulkUpdateProductListAssociations(body, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.bulkUpdateProductListAssociationsWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * The BulkUpdateProductListAssociations endpoint updates the positions of specified associations.
-     * Bulk update collection associations position
-     * @param body 
-     */
-    public bulkUpdateProductListAssociations(body: ProductlistBulkUpdateProductListAssociationsRequest, _options?: Configuration): Observable<RpcStatus> {
-        return this.bulkUpdateProductListAssociationsWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<RpcStatus>) => apiResponse.data));
     }
 
     /**
@@ -456,6 +426,35 @@ export class ObservableProductListApi {
     }
 
     /**
+     * @param body 
+     */
+    public productListBulkUpdateProductListAssociationsWithHttpInfo(body: ProductlistBulkUpdateProductListAssociationsRequest, _options?: Configuration): Observable<HttpInfo<any>> {
+        const requestContextPromise = this.requestFactory.productListBulkUpdateProductListAssociations(body, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.productListBulkUpdateProductListAssociationsWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * @param body 
+     */
+    public productListBulkUpdateProductListAssociations(body: ProductlistBulkUpdateProductListAssociationsRequest, _options?: Configuration): Observable<any> {
+        return this.productListBulkUpdateProductListAssociationsWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<any>) => apiResponse.data));
+    }
+
+    /**
      * The SearchProductLists endpoint is used to retrieve a list of existing collections of products within the system.
      * Search Collections
      * @param body 
@@ -519,6 +518,39 @@ export class ObservableProductListApi {
      */
     public searchProductListsByIds(body: ProductlistSearchProductListsByIdsRequest, _options?: Configuration): Observable<ProductlistSearchProductListsByIdsResponse> {
         return this.searchProductListsByIdsWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<ProductlistSearchProductListsByIdsResponse>) => apiResponse.data));
+    }
+
+    /**
+     * The SetProductListAssociations endpoint is used to set the associations between a collection and a list of products.
+     * Set Collection/Product Associations
+     * @param body 
+     */
+    public setProductListAssociationsWithHttpInfo(body: ProductlistSetProductListAssociationsRequest, _options?: Configuration): Observable<HttpInfo<ProductlistSetProductListAssociationsResponse>> {
+        const requestContextPromise = this.requestFactory.setProductListAssociations(body, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.setProductListAssociationsWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * The SetProductListAssociations endpoint is used to set the associations between a collection and a list of products.
+     * Set Collection/Product Associations
+     * @param body 
+     */
+    public setProductListAssociations(body: ProductlistSetProductListAssociationsRequest, _options?: Configuration): Observable<ProductlistSetProductListAssociationsResponse> {
+        return this.setProductListAssociationsWithHttpInfo(body, _options).pipe(map((apiResponse: HttpInfo<ProductlistSetProductListAssociationsResponse>) => apiResponse.data));
     }
 
     /**

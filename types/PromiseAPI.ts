@@ -36,11 +36,14 @@ import { ProductlistSearchProductListsByIdsRequest } from '../models/Productlist
 import { ProductlistSearchProductListsByIdsResponse } from '../models/ProductlistSearchProductListsByIdsResponse';
 import { ProductlistSearchProductListsRequest } from '../models/ProductlistSearchProductListsRequest';
 import { ProductlistSearchProductListsResponse } from '../models/ProductlistSearchProductListsResponse';
+import { ProductlistSetProductListAssociationsRequest } from '../models/ProductlistSetProductListAssociationsRequest';
+import { ProductlistSetProductListAssociationsResponse } from '../models/ProductlistSetProductListAssociationsResponse';
 import { ProductlistUpdateProductListRequest } from '../models/ProductlistUpdateProductListRequest';
 import { ProductlistUpdateProductListResponse } from '../models/ProductlistUpdateProductListResponse';
 import { ProtobufAny } from '../models/ProtobufAny';
 import { RpcStatus } from '../models/RpcStatus';
 import { SearchProductListsRequestQuery } from '../models/SearchProductListsRequestQuery';
+import { SetProductListAssociationsRequestAssociation } from '../models/SetProductListAssociationsRequestAssociation';
 import { ObservableProductListApi } from './ObservableAPI';
 
 import { ProductListApiRequestFactory, ProductListApiResponseProcessor} from "../apis/ProductListApi";
@@ -53,26 +56,6 @@ export class PromiseProductListApi {
         responseProcessor?: ProductListApiResponseProcessor
     ) {
         this.api = new ObservableProductListApi(configuration, requestFactory, responseProcessor);
-    }
-
-    /**
-     * The BulkUpdateProductListAssociations endpoint updates the positions of specified associations.
-     * Bulk update collection associations position
-     * @param body 
-     */
-    public bulkUpdateProductListAssociationsWithHttpInfo(body: ProductlistBulkUpdateProductListAssociationsRequest, _options?: Configuration): Promise<HttpInfo<RpcStatus>> {
-        const result = this.api.bulkUpdateProductListAssociationsWithHttpInfo(body, _options);
-        return result.toPromise();
-    }
-
-    /**
-     * The BulkUpdateProductListAssociations endpoint updates the positions of specified associations.
-     * Bulk update collection associations position
-     * @param body 
-     */
-    public bulkUpdateProductListAssociations(body: ProductlistBulkUpdateProductListAssociationsRequest, _options?: Configuration): Promise<RpcStatus> {
-        const result = this.api.bulkUpdateProductListAssociations(body, _options);
-        return result.toPromise();
     }
 
     /**
@@ -296,6 +279,22 @@ export class PromiseProductListApi {
     }
 
     /**
+     * @param body 
+     */
+    public productListBulkUpdateProductListAssociationsWithHttpInfo(body: ProductlistBulkUpdateProductListAssociationsRequest, _options?: Configuration): Promise<HttpInfo<any>> {
+        const result = this.api.productListBulkUpdateProductListAssociationsWithHttpInfo(body, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * @param body 
+     */
+    public productListBulkUpdateProductListAssociations(body: ProductlistBulkUpdateProductListAssociationsRequest, _options?: Configuration): Promise<any> {
+        const result = this.api.productListBulkUpdateProductListAssociations(body, _options);
+        return result.toPromise();
+    }
+
+    /**
      * The SearchProductLists endpoint is used to retrieve a list of existing collections of products within the system.
      * Search Collections
      * @param body 
@@ -332,6 +331,26 @@ export class PromiseProductListApi {
      */
     public searchProductListsByIds(body: ProductlistSearchProductListsByIdsRequest, _options?: Configuration): Promise<ProductlistSearchProductListsByIdsResponse> {
         const result = this.api.searchProductListsByIds(body, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * The SetProductListAssociations endpoint is used to set the associations between a collection and a list of products.
+     * Set Collection/Product Associations
+     * @param body 
+     */
+    public setProductListAssociationsWithHttpInfo(body: ProductlistSetProductListAssociationsRequest, _options?: Configuration): Promise<HttpInfo<ProductlistSetProductListAssociationsResponse>> {
+        const result = this.api.setProductListAssociationsWithHttpInfo(body, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * The SetProductListAssociations endpoint is used to set the associations between a collection and a list of products.
+     * Set Collection/Product Associations
+     * @param body 
+     */
+    public setProductListAssociations(body: ProductlistSetProductListAssociationsRequest, _options?: Configuration): Promise<ProductlistSetProductListAssociationsResponse> {
+        const result = this.api.setProductListAssociations(body, _options);
         return result.toPromise();
     }
 

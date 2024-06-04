@@ -12,42 +12,35 @@
 
 import { HttpFile } from '../http/http';
 
-export class ProductlistSearchProductListsByIdsRequest {
-    'tenantId'?: string;
-    'ids'?: Array<string>;
-    'pageSize'?: number;
-    'pageNumber'?: number;
+export class SetProductListAssociationsRequestAssociation {
+    'listId'?: string;
+    'position'?: number;
+    'productGrn'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "tenantId",
-            "baseName": "tenantId",
+            "name": "listId",
+            "baseName": "listId",
             "type": "string",
             "format": ""
         },
         {
-            "name": "ids",
-            "baseName": "ids",
-            "type": "Array<string>",
+            "name": "position",
+            "baseName": "position",
+            "type": "number",
+            "format": "int32"
+        },
+        {
+            "name": "productGrn",
+            "baseName": "productGrn",
+            "type": "string",
             "format": ""
-        },
-        {
-            "name": "pageSize",
-            "baseName": "pageSize",
-            "type": "number",
-            "format": "int64"
-        },
-        {
-            "name": "pageNumber",
-            "baseName": "pageNumber",
-            "type": "number",
-            "format": "int64"
         }    ];
 
     static getAttributeTypeMap() {
-        return ProductlistSearchProductListsByIdsRequest.attributeTypeMap;
+        return SetProductListAssociationsRequestAssociation.attributeTypeMap;
     }
 
     public constructor() {

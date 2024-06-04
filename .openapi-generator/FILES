@@ -40,11 +40,14 @@ src/models/ProductlistSearchProductListsByIdsRequest.ts
 src/models/ProductlistSearchProductListsByIdsResponse.ts
 src/models/ProductlistSearchProductListsRequest.ts
 src/models/ProductlistSearchProductListsResponse.ts
+src/models/ProductlistSetProductListAssociationsRequest.ts
+src/models/ProductlistSetProductListAssociationsResponse.ts
 src/models/ProductlistUpdateProductListRequest.ts
 src/models/ProductlistUpdateProductListResponse.ts
 src/models/ProtobufAny.ts
 src/models/RpcStatus.ts
 src/models/SearchProductListsRequestQuery.ts
+src/models/SetProductListAssociationsRequestAssociation.ts
 src/models/index.ts
 src/runtime.ts
 tsconfig.json

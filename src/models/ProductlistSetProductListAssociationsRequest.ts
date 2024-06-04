@@ -15,25 +15,31 @@
 /**
  * 
  * @export
- * @interface ProductlistGetProductListByUrlKeyRequest
+ * @interface ProductlistSetProductListAssociationsRequest
  */
-export interface ProductlistGetProductListByUrlKeyRequest {
+export interface ProductlistSetProductListAssociationsRequest {
     /**
      * 
      * @type {string}
-     * @memberof ProductlistGetProductListByUrlKeyRequest
+     * @memberof ProductlistSetProductListAssociationsRequest
      */
     'tenantId'?: string;
     /**
      * 
      * @type {string}
-     * @memberof ProductlistGetProductListByUrlKeyRequest
+     * @memberof ProductlistSetProductListAssociationsRequest
      */
-    'urlKey'?: string;
+    'listId'?: string;
     /**
      * 
      * @type {string}
-     * @memberof ProductlistGetProductListByUrlKeyRequest
+     * @memberof ProductlistSetProductListAssociationsRequest
      */
-    'locale'?: string;
+    'productGrn'?: string;
+    /**
+     * 
+     * @type {Array<SetProductListAssociationsRequestAssociation>}
+     * @memberof ProductlistSetProductListAssociationsRequest
+     */
+    'associations'?: Array<SetProductListAssociationsRequestAssociation>;
 }

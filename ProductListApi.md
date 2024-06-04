@@ -4,6 +4,7 @@ All URIs are relative to *https://product-list.api.gogemini.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**bulkUpdateProductListAssociations**](ProductListApi.md#bulkUpdateProductListAssociations) | **POST** /productlist.ProductList/BulkUpdateProductListAssociations | Bulk update collection associations position
 [**createProductList**](ProductListApi.md#createProductList) | **POST** /productlist.ProductList/CreateProductList | Create Collection
 [**createProductListAssociation**](ProductListApi.md#createProductListAssociation) | **POST** /productlist.ProductList/CreateProductListAssociation | Create Collection/Product Association
 [**deleteProductList**](ProductListApi.md#deleteProductList) | **POST** /productlist.ProductList/DeleteProductList | Delete Collection
@@ -15,12 +16,75 @@ Method | HTTP request | Description
 [**getProductListsCount**](ProductListApi.md#getProductListsCount) | **POST** /productlist.ProductList/GetProductListsCount | Get Collection Product Count
 [**listProductListAssociations**](ProductListApi.md#listProductListAssociations) | **POST** /productlist.ProductList/ListProductListAssociations | List Collection/Product Associations
 [**listProductLists**](ProductListApi.md#listProductLists) | **POST** /productlist.ProductList/ListProductLists | List Collections
-[**productListBulkUpdateProductListAssociations**](ProductListApi.md#productListBulkUpdateProductListAssociations) | **POST** /productlist.ProductList/BulkUpdateProductListAssociations | 
 [**searchProductLists**](ProductListApi.md#searchProductLists) | **POST** /productlist.ProductList/SearchProductLists | Search Collections
 [**searchProductListsByIds**](ProductListApi.md#searchProductListsByIds) | **POST** /productlist.ProductList/SearchProductListsByIds | Search Collections by Ids
-[**setProductListAssociations**](ProductListApi.md#setProductListAssociations) | **POST** /productlist.ProductList/SetProductListAssociations | Set Collection/Product Associations
 [**updateProductList**](ProductListApi.md#updateProductList) | **POST** /productlist.ProductList/UpdateProductList | Update Collection
 
+
+# **bulkUpdateProductListAssociations**
+> RpcStatus bulkUpdateProductListAssociations(body)
+
+The BulkUpdateProductListAssociations endpoint updates the positions of specified associations.
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .ProductListApi(configuration);
+
+let body:.ProductListApiBulkUpdateProductListAssociationsRequest = {
+  // ProductlistBulkUpdateProductListAssociationsRequest
+  body: {
+    tenantId: "tenantId_example",
+    productListAssociations: [
+      {
+        id: "id_example",
+        position: 1,
+      },
+    ],
+  },
+};
+
+apiInstance.bulkUpdateProductListAssociations(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **ProductlistBulkUpdateProductListAssociationsRequest**|  |
+
+
+### Return type
+
+**RpcStatus**
+
+### Authorization
+
+[standardAuthorization](README.md#standardAuthorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**500** | An internal error occurred is thrown when an incompatible payload is sent |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **createProductList**
 > ProductlistCreateProductListResponse createProductList(body)
@@ -76,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -138,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -198,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -258,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -318,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -378,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -438,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -499,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -558,7 +622,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -627,7 +691,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -688,7 +752,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -702,68 +766,6 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | Unauthorized |  -  |
 **500** | An internal error occurred is thrown when an incompatible payload is sent |  -  |
-**0** | An unexpected error response. |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **productListBulkUpdateProductListAssociations**
-> any productListBulkUpdateProductListAssociations(body)
-
-
-### Example
-
-
-```typescript
-import {  } from '';
-import * as fs from 'fs';
-
-const configuration = .createConfiguration();
-const apiInstance = new .ProductListApi(configuration);
-
-let body:.ProductListApiProductListBulkUpdateProductListAssociationsRequest = {
-  // ProductlistBulkUpdateProductListAssociationsRequest
-  body: {
-    tenantId: "tenantId_example",
-    productListAssociations: [
-      {
-        id: "id_example",
-        position: 1,
-      },
-    ],
-  },
-};
-
-apiInstance.productListBulkUpdateProductListAssociations(body).then((data:any) => {
-  console.log('API called successfully. Returned data: ' + data);
-}).catch((error:any) => console.error(error));
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **ProductlistBulkUpdateProductListAssociationsRequest**|  |
-
-
-### Return type
-
-**any**
-
-### Authorization
-
-[Authorization](README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A successful response. |  -  |
 **0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -817,7 +819,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -881,75 +883,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Unauthorized |  -  |
-**500** | An internal error occurred is thrown when an incompatible payload is sent |  -  |
-**0** | An unexpected error response. |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **setProductListAssociations**
-> ProductlistSetProductListAssociationsResponse setProductListAssociations(body)
-
-The SetProductListAssociations endpoint is used to set the associations between a collection and a list of products.
-
-### Example
-
-
-```typescript
-import {  } from '';
-import * as fs from 'fs';
-
-const configuration = .createConfiguration();
-const apiInstance = new .ProductListApi(configuration);
-
-let body:.ProductListApiSetProductListAssociationsRequest = {
-  // ProductlistSetProductListAssociationsRequest
-  body: {
-    tenantId: "tenantId_example",
-    listId: "listId_example",
-    productGrn: "productGrn_example",
-    associations: [
-      {
-        listId: "listId_example",
-        position: 1,
-        productGrn: "productGrn_example",
-      },
-    ],
-  },
-};
-
-apiInstance.setProductListAssociations(body).then((data:any) => {
-  console.log('API called successfully. Returned data: ' + data);
-}).catch((error:any) => console.error(error));
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **ProductlistSetProductListAssociationsRequest**|  |
-
-
-### Return type
-
-**ProductlistSetProductListAssociationsResponse**
-
-### Authorization
-
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -1020,7 +954,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](README.md#Authorization)
+[standardAuthorization](README.md#standardAuthorization)
 
 ### HTTP request headers
 

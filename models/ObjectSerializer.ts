@@ -33,14 +33,11 @@ export * from '../models/ProductlistSearchProductListsByIdsRequest';
 export * from '../models/ProductlistSearchProductListsByIdsResponse';
 export * from '../models/ProductlistSearchProductListsRequest';
 export * from '../models/ProductlistSearchProductListsResponse';
-export * from '../models/ProductlistSetProductListAssociationsRequest';
-export * from '../models/ProductlistSetProductListAssociationsResponse';
 export * from '../models/ProductlistUpdateProductListRequest';
 export * from '../models/ProductlistUpdateProductListResponse';
 export * from '../models/ProtobufAny';
 export * from '../models/RpcStatus';
 export * from '../models/SearchProductListsRequestQuery';
-export * from '../models/SetProductListAssociationsRequestAssociation';
 
 import { OrderByDirection } from '../models/OrderByDirection';
 import { ProductlistBulkUpdateProductListAssociationsRequest } from '../models/ProductlistBulkUpdateProductListAssociationsRequest';
@@ -77,14 +74,11 @@ import { ProductlistSearchProductListsByIdsRequest } from '../models/Productlist
 import { ProductlistSearchProductListsByIdsResponse } from '../models/ProductlistSearchProductListsByIdsResponse';
 import { ProductlistSearchProductListsRequest } from '../models/ProductlistSearchProductListsRequest';
 import { ProductlistSearchProductListsResponse } from '../models/ProductlistSearchProductListsResponse';
-import { ProductlistSetProductListAssociationsRequest } from '../models/ProductlistSetProductListAssociationsRequest';
-import { ProductlistSetProductListAssociationsResponse } from '../models/ProductlistSetProductListAssociationsResponse';
 import { ProductlistUpdateProductListRequest } from '../models/ProductlistUpdateProductListRequest';
 import { ProductlistUpdateProductListResponse } from '../models/ProductlistUpdateProductListResponse';
 import { ProtobufAny } from '../models/ProtobufAny';
 import { RpcStatus } from '../models/RpcStatus';
 import { SearchProductListsRequestQuery } from '../models/SearchProductListsRequestQuery';
-import { SetProductListAssociationsRequestAssociation } from '../models/SetProductListAssociationsRequestAssociation';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -137,14 +131,11 @@ let typeMap: {[index: string]: any} = {
     "ProductlistSearchProductListsByIdsResponse": ProductlistSearchProductListsByIdsResponse,
     "ProductlistSearchProductListsRequest": ProductlistSearchProductListsRequest,
     "ProductlistSearchProductListsResponse": ProductlistSearchProductListsResponse,
-    "ProductlistSetProductListAssociationsRequest": ProductlistSetProductListAssociationsRequest,
-    "ProductlistSetProductListAssociationsResponse": ProductlistSetProductListAssociationsResponse,
     "ProductlistUpdateProductListRequest": ProductlistUpdateProductListRequest,
     "ProductlistUpdateProductListResponse": ProductlistUpdateProductListResponse,
     "ProtobufAny": ProtobufAny,
     "RpcStatus": RpcStatus,
     "SearchProductListsRequestQuery": SearchProductListsRequestQuery,
-    "SetProductListAssociationsRequestAssociation": SetProductListAssociationsRequestAssociation,
 }
 
 type MimeTypeDescriptor = {

@@ -36,23 +36,17 @@ import { ProductlistSearchProductListsByIdsRequest } from '../models/Productlist
 import { ProductlistSearchProductListsByIdsResponse } from '../models/ProductlistSearchProductListsByIdsResponse';
 import { ProductlistSearchProductListsRequest } from '../models/ProductlistSearchProductListsRequest';
 import { ProductlistSearchProductListsResponse } from '../models/ProductlistSearchProductListsResponse';
+import { ProductlistSetProductListAssociationsRequest } from '../models/ProductlistSetProductListAssociationsRequest';
+import { ProductlistSetProductListAssociationsResponse } from '../models/ProductlistSetProductListAssociationsResponse';
 import { ProductlistUpdateProductListRequest } from '../models/ProductlistUpdateProductListRequest';
 import { ProductlistUpdateProductListResponse } from '../models/ProductlistUpdateProductListResponse';
 import { ProtobufAny } from '../models/ProtobufAny';
 import { RpcStatus } from '../models/RpcStatus';
 import { SearchProductListsRequestQuery } from '../models/SearchProductListsRequestQuery';
+import { SetProductListAssociationsRequestAssociation } from '../models/SetProductListAssociationsRequestAssociation';
 
 import { ObservableProductListApi } from "./ObservableAPI";
 import { ProductListApiRequestFactory, ProductListApiResponseProcessor} from "../apis/ProductListApi";
-
-export interface ProductListApiBulkUpdateProductListAssociationsRequest {
-    /**
-     * 
-     * @type ProductlistBulkUpdateProductListAssociationsRequest
-     * @memberof ProductListApibulkUpdateProductListAssociations
-     */
-    body: ProductlistBulkUpdateProductListAssociationsRequest
-}
 
 export interface ProductListApiCreateProductListRequest {
     /**
@@ -153,6 +147,15 @@ export interface ProductListApiListProductListsRequest {
     body: ProductlistListProductListsRequest
 }
 
+export interface ProductListApiProductListBulkUpdateProductListAssociationsRequest {
+    /**
+     * 
+     * @type ProductlistBulkUpdateProductListAssociationsRequest
+     * @memberof ProductListApiproductListBulkUpdateProductListAssociations
+     */
+    body: ProductlistBulkUpdateProductListAssociationsRequest
+}
+
 export interface ProductListApiSearchProductListsRequest {
     /**
      * 
@@ -171,6 +174,15 @@ export interface ProductListApiSearchProductListsByIdsRequest {
     body: ProductlistSearchProductListsByIdsRequest
 }
 
+export interface ProductListApiSetProductListAssociationsRequest {
+    /**
+     * 
+     * @type ProductlistSetProductListAssociationsRequest
+     * @memberof ProductListApisetProductListAssociations
+     */
+    body: ProductlistSetProductListAssociationsRequest
+}
+
 export interface ProductListApiUpdateProductListRequest {
     /**
      * 
@@ -185,24 +197,6 @@ export class ObjectProductListApi {
 
     public constructor(configuration: Configuration, requestFactory?: ProductListApiRequestFactory, responseProcessor?: ProductListApiResponseProcessor) {
         this.api = new ObservableProductListApi(configuration, requestFactory, responseProcessor);
-    }
-
-    /**
-     * The BulkUpdateProductListAssociations endpoint updates the positions of specified associations.
-     * Bulk update collection associations position
-     * @param param the request object
-     */
-    public bulkUpdateProductListAssociationsWithHttpInfo(param: ProductListApiBulkUpdateProductListAssociationsRequest, options?: Configuration): Promise<HttpInfo<RpcStatus>> {
-        return this.api.bulkUpdateProductListAssociationsWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * The BulkUpdateProductListAssociations endpoint updates the positions of specified associations.
-     * Bulk update collection associations position
-     * @param param the request object
-     */
-    public bulkUpdateProductListAssociations(param: ProductListApiBulkUpdateProductListAssociationsRequest, options?: Configuration): Promise<RpcStatus> {
-        return this.api.bulkUpdateProductListAssociations(param.body,  options).toPromise();
     }
 
     /**
@@ -404,6 +398,20 @@ export class ObjectProductListApi {
     }
 
     /**
+     * @param param the request object
+     */
+    public productListBulkUpdateProductListAssociationsWithHttpInfo(param: ProductListApiProductListBulkUpdateProductListAssociationsRequest, options?: Configuration): Promise<HttpInfo<any>> {
+        return this.api.productListBulkUpdateProductListAssociationsWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * @param param the request object
+     */
+    public productListBulkUpdateProductListAssociations(param: ProductListApiProductListBulkUpdateProductListAssociationsRequest, options?: Configuration): Promise<any> {
+        return this.api.productListBulkUpdateProductListAssociations(param.body,  options).toPromise();
+    }
+
+    /**
      * The SearchProductLists endpoint is used to retrieve a list of existing collections of products within the system.
      * Search Collections
      * @param param the request object
@@ -437,6 +445,24 @@ export class ObjectProductListApi {
      */
     public searchProductListsByIds(param: ProductListApiSearchProductListsByIdsRequest, options?: Configuration): Promise<ProductlistSearchProductListsByIdsResponse> {
         return this.api.searchProductListsByIds(param.body,  options).toPromise();
+    }
+
+    /**
+     * The SetProductListAssociations endpoint is used to set the associations between a collection and a list of products.
+     * Set Collection/Product Associations
+     * @param param the request object
+     */
+    public setProductListAssociationsWithHttpInfo(param: ProductListApiSetProductListAssociationsRequest, options?: Configuration): Promise<HttpInfo<ProductlistSetProductListAssociationsResponse>> {
+        return this.api.setProductListAssociationsWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * The SetProductListAssociations endpoint is used to set the associations between a collection and a list of products.
+     * Set Collection/Product Associations
+     * @param param the request object
+     */
+    public setProductListAssociations(param: ProductListApiSetProductListAssociationsRequest, options?: Configuration): Promise<ProductlistSetProductListAssociationsResponse> {
+        return this.api.setProductListAssociations(param.body,  options).toPromise();
     }
 
     /**
